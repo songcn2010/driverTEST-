@@ -19,3 +19,5 @@
 ## 预览图
 ![预览图](./medias/GIF.gif)
 - 这录制gif的工具也太卡了(*/ω＼*)
+## 打包测试
+- [下载地址](https://pan.baidu.com/s/1H9v9dVKg2Wly8zkcsYa76A)
