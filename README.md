@@ -18,3 +18,4 @@
 ## [点击查看服务端代码](https://github.com/songcn2010/drive_server)
 ## 预览图
 ![预览图](./medias/GIF.gif)
+- 这录制gif的工具也太卡了(*/ω＼*)
