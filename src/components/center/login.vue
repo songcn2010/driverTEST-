@@ -51,12 +51,13 @@ export default {
         verify: this.verify
       });
       let { meta, data } = res.data;
-      // console.log(data)
+      console.log(data)
       if (meta.status === 200) {
         // 登陆成功，将token保存，并提示跳转
         window.localStorage.setItem('token', data.token);
         window.localStorage.setItem('username', data.username);
         window.localStorage.setItem('avatar', data.avatar);
+        window.localStorage.setItem('collection', data.collection);
         Toast.success({
           duration: 1000,
           message: meta.msg

@@ -37,10 +37,7 @@ export default {
       // 当前题目的小标
       index: 0,
       // 题目列表
-      testList: [],
-
-      // 当前科目,方便收藏 两种科目表示方法  1-题目id  4-题目id
-      nowType: ""
+      testList: []
     };
   },
   mounted() {
@@ -79,7 +76,7 @@ export default {
     async addCol() {
       let res = await this.axios.post("/api/users/collect", {
         username: window.localStorage.getItem("username"),
-        collection: this.nowType + "-" + this.testList[this.index].id
+        collection: this.testList[this.index].id
       });
       // console.log(res);
       if(res.data.meta.status === 200){

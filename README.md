@@ -15,3 +15,6 @@
 - 由于以前已经用过ElementUI，MUI，等，这次用了一个没用过的
 ## WE-UI
 - [参考文档](https://wevue.org/doc/v2/index)
+## [点击查看服务端代码](https://github.com/songcn2010/drive_server)
+## 预览图
+![预览图](./medias/GIF.gif)

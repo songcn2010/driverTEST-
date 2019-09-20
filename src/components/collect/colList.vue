@@ -14,9 +14,9 @@
       <div>
         <ul>
           <li v-for="(item,index) in colList" :key="index">
-            <input type="checkbox" v-if="control" ref='chk'>
+            <input type="checkbox" v-if="control" ref='chk' :id="item.id">
             <div @touchend="handleToTest(item)">
-              <img :src="item.url" v-if="item.url">
+              <img :src="item.url" :style="item.url?'visibility:visible':'visibility:hidden'">
               <p :class="control&&!item.url ?'question':''">{{ item.question }}</p>
               <p>》</p>
             </div>
@@ -75,34 +75,17 @@ export default {
     },
     // 获取删除后剩下的id字符串
     cancelCols() {
-      console.log(1)
-      let arr = this.$refs.chk.map(
-        (item, index) => (item.checked ? index : "")
-      );
+      // console.log(1)
 
-      let cols = window.localStorage.getItem("collection").split(",");
-      let newarr = [];
-      arr.forEach(e => {
-        if (e || e === 0) {
-          newarr.push(e);
+      let arrcol = this.collections.split(',')
+      this.$refs.chk.forEach(e => {
+        if(e.checked){
+          let idx = arrcol.findIndex(item => item == e.id);
+          arrcol.splice(idx,1)
         }
-      });
-      newarr.sort((a, b) => {
-        if (a >= b) {
-          return -1;
-        } else {
-          return 1;
-        }
-      });
-      // 获取到下标从大到小的数组
-      newarr.forEach(e => {
-        cols.splice(e, 1);
-      });
-      // 得到的cols就是删除收藏后剩下的id
-      // 转成字符串
-      let colstr = cols.join(",");
-      this.cancelCol = colstr;
-      console.log(this.cancelCol);
+      })
+
+     this.collections = arrcol.join(',')
       this.tip();
     },
 
@@ -118,13 +101,11 @@ export default {
     async tip() {
       let username = window.localStorage.getItem("username");
       let res = await this.axios.get(
-        `/api/users/cancelcol?username=${username}&collection=${this.cancelCol}`
+        `/api/users/cancelcol?username=${username}&collection=${this.collections}`
       );
       console.log(res);
       if (res.data.meta.status == 200) {
-        this.collections = this.cancelCol;
-        window.localStorage.setItem("collection", this.cancelCol);
-        this.cancelCol = "";
+        window.localStorage.setItem("collection", this.collections);
         this.control = false;
         this.getnow();
         this.collections = window.localStorage.getItem("collection");
@@ -138,11 +119,11 @@ export default {
       let res = await this.axios.get(
         `/api/users/colList?collection=${collection}`
       );
-      // console.log(res.data.collection)
+      console.log(res.data)
       let { meta, data } = res.data;
       if (meta.status === 200) {
-        this.colList = data;
         this.collections = res.data.collection;
+        this.colList = data;        
       }
     },
 
@@ -171,9 +152,7 @@ export default {
   bottom: 60px;
   padding: 5%;
 }
-.question {
-  margin-left: 85px;
-}
+
 .clist_content .title {
   position: relative;
 }
@@ -183,6 +162,7 @@ export default {
   top: -5px;
 }
 .clist_content li {
+  height: 80px;
   border-top: 1px solid #ccc;
   padding: 10px;
   display: flex;
