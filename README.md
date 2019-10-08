@@ -23,7 +23,7 @@
 - [下载地址](https://pan.baidu.com/s/1H9v9dVKg2Wly8zkcsYa76A)
 - 真机测试正常
 ## 在线测试地址
-- 'http://drive.nat123.cc:34567'
 - 'http://39.108.64.147:8888'
+- 'http://drive.nat123.cc:34567'
 - 由于云服务器配置较低，可能响应速度会有点慢
 - 推荐使用打包后的apk安装测试
