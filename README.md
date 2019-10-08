@@ -18,7 +18,7 @@
 ## [点击查看服务端代码](https://github.com/songcn2010/drive_server)
 ## 预览图
 ![预览图](./medias/GIF.gif)
-- 这录制gif的工具也太卡了(*/ω＼*)
+- 这录制gif的工具也太卡了
 ## 打包测试
 - [下载地址](https://pan.baidu.com/s/1H9v9dVKg2Wly8zkcsYa76A)
 ## 在线测试地址
