@@ -21,6 +21,7 @@
 - 这录制gif的工具也太卡了
 ## 打包测试
 - [下载地址](https://pan.baidu.com/s/1H9v9dVKg2Wly8zkcsYa76A)
+- 真机测试正常
 ## 在线测试地址
 - 'http://drive.nat123.cc:34567'
 - 'http://39.108.64.147:8888'
