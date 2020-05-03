@@ -20,7 +20,8 @@
 ![预览图](./medias/GIF.gif)
 - 这录制gif的工具也太卡了
 ## 打包测试
-- [下载地址](https://pan.baidu.com/s/1H9v9dVKg2Wly8zkcsYa76A)
+- [下载地址](https://pan.baidu.com/s/1zHrnSxsaqUuD5YMF09gDQA)
+  - 提取码：y0nx
 - 真机测试正常
 ## 在线测试地址
 - http://39.108.64.147:8888
